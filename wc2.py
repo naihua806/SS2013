@@ -9,17 +9,13 @@ elif argc == 2:
       s = f.read()
       f.close()
     except IOError:        
-      print >>sys.stderr, "nl: %s: No such file or directory" % (sys.argv[1])        
+      print >>sys.stderr, "wc: %s: No such file or directory" % (sys.argv[1])        
       sys.exit()
 else:    
-    print >>sys.stderr, "usage: wc [file]"    
+    print >>sys.stderr, "usage: python wc.py [filename]"    
     sys.exit()
-
-
 words = s.split()
-
 d = {}
-
 for w in words:
   if d.has_key(w):
     d[w] += 1
