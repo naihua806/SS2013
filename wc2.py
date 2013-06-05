@@ -5,7 +5,9 @@ if argc == 1:
   f = sys.stdin
 elif argc == 2:    
     try:
-      f = open(sys.argv[1], "rU")    
+      f = open(sys.argv[1], "rU")
+      s = f.read()
+      f.close()
     except IOError:        
       print >>sys.stderr, "nl: %s: No such file or directory" % (sys.argv[1])        
       sys.exit()
@@ -13,14 +15,6 @@ else:
     print >>sys.stderr, "usage: wc [file]"    
     sys.exit()
 
-
-
-
-
-
-f = sys.stdin
-s = f.read()
-f.close()
 
 words = s.split()
 
